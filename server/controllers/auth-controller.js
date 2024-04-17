@@ -1,4 +1,5 @@
 const formModel = require("../models/form_model");
+const destinationData = require("./data");
 
 const home = (req, res) => {
   console.log("home page");
@@ -16,4 +17,13 @@ const submitForm = async (req, res) => {
   }
 };
 
-module.exports = { home, submitForm };
+// POPULAR DESTINATION CARD API
+const destinationCardApi = async (req, res) => {
+  try {
+    res.json({ data: destinationData });
+  } catch (error) {
+    console.log("Destination card api error :", error);
+  }
+};
+
+module.exports = { home, submitForm, destinationCardApi };

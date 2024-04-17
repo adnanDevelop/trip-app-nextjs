@@ -5,6 +5,8 @@ const formValidation = require("../validator/formValidation");
 const validation = require("../middleware/validate-middleware");
 
 router.route("/").get(authController.home);
-router
-  .route("/submitform")
-  .post(validation(formValidation), authController.submitForm);
+// router
+//   .route("/submitform")
+//   .post(validation(formValidation), authController.submitForm);
+
+router.route("/destinationapi").get(authController.destinationCardApi);
